@@ -1,0 +1,19 @@
+{
+  "name": "prueba-pokemon-practica-i",
+  "version": "1.0.0",
+  "description": "Primer proyecto con API - JavaScript",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuanSebau/prueba-pokemon-practica-I.git"
+  },
+  "author": "@JuanSe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JuanSebau/prueba-pokemon-practica-I/issues"
+  },
+  "homepage": "https://github.com/JuanSebau/prueba-pokemon-practica-I#readme"
+}

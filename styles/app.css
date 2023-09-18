@@ -1,0 +1,223 @@
+/* Reset de estilos */
+body, h1, h2, h3, p, div {
+    margin: 0;
+    padding: 0;
+}
+
+/* Agrega un estilo general para todos los dispositivos */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    font-size: 12px; /* Tamaño de fuente general */
+}
+
+/* Estilos para el título */
+.title {
+    background: black;
+    font-family: 'Dosis', sans-serif;
+    text-align: center;
+    margin: 10px 0; /* Reducir el margen superior e inferior */
+    color: white;
+    padding: 5px 0; /* Agregar un poco de espacio interno */
+    font-size: 18px; /* Tamaño de fuente del título */
+}
+
+/* Estilos para el encabezado */
+header {
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* Estilos para el contenedor*/
+.pokemon-container {
+    background-color: #fafafa;
+    max-width: 1000px;
+    margin: 0 auto; 
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px; /* Reducir el espacio entre los Pokémon */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+}
+
+
+/* Estilos para cada tarjeta de Pokémon */
+.pokemon-block {
+    position: relative;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    justify-self: center; 
+    min-width: 350px; 
+    background-color: white;
+    margin: 20px;
+}
+
+/*Estilos para la altura del Pokémon*/
+.height-info {
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    background-color: white;
+    color: black;
+    padding: 8px 3px;
+    border-radius: 50%;
+    font-size: 12px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/*Estilos para el peso del Pokémon*/
+.weight-info {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: white;
+    color: black;
+    padding: 8px 3px;
+    border-radius: 50%;
+    font-size: 12px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+/*Estilos para el numero del Pokémon*/
+.number-info{
+    position: relative;
+    top: -140px;
+    right: 10px;
+    background-color: transparent;
+    color: #e9e8e6;
+    z-index: 1;
+    font-size: 100px;
+}
+/*Estilos para la imagen del Pokémon*/
+.sprite-info{
+    position: relative;
+    z-index: 2;
+}
+
+/*Estilos para el nombre del Pokémon*/
+.name-info{
+    position: relative;
+    top: -140px;
+    color: #65625c;
+    font-weight: bold; /*Para poner negrilla*/
+    font-size: 20px;
+}
+
+
+/*Estilos para la el tipo de Pokémon*/
+.type-info{
+    position: relative;
+    top: -110px;
+    font-weight: bold;
+}
+
+/*Estilos para la habilidad del Pokémon*/
+.ability-info{
+    position: relative;
+    top: -110px;
+    color: #969490;
+    font-weight: bold;
+}
+
+/* Estilos para el contenedor del spinner */
+#spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+}
+.swal2-popup{
+    padding: 20px;
+    width: 500px; 
+    height: 700px; 
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para la alerta */
+.pokemon-alert {
+    text-align: center;
+    padding: 20px;
+    height: 600px; 
+    box-sizing: border-box; /* Incluye el padding en el tamaño total */
+    border-radius: 10px; /* Agrega esquinas redondeadas */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    margin: auto; /* Centra la alerta en la pantalla */
+}
+
+
+/* Estilos para la imagen de la alerta */
+.pokemon-header {
+    position: absolute;
+    top: -50px;
+    right: 205px;
+    max-width: 100%;
+    height: auto;
+    width: 150px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/*Estilos para el numero del Pokemon*/
+.pokemon-number{
+    position: relative;
+    top: 10px;
+    color: #a5a8af;
+}
+.pokemon-name{
+    position: relative;
+    color: #0d1d2e;
+    font-size: 35px;
+}
+
+/* Estilos para los detalles de la alerta */
+.pokemon-details {
+    position: relative;
+    top: 60px;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+/* Estilos para los stats de la alerta */
+.pokemon-stats{
+    position: relative;
+    top: 60px;
+    font-size: 14px;
+}
+
+
+/* Estilos para los tipos de Pokémon */
+.type {
+    display: inline-block;
+    padding: 4px 10px;
+    margin-right: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+}
+
+
+/* Estilos para las estadísticas de la alerta */
+.pokemon-stats {
+    text-align: left;
+}
+
+/* Estilos para las estadísticas individuales */
+.stat {
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 768px){
+    .pokemon-container{
+        grid-template-columns: minmax(150px, 1fr);
+    }
+    .pokemon-block{
+        min-width: 70%;
+    }
+}
+    
