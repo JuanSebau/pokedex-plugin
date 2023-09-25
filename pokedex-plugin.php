@@ -7,11 +7,32 @@ Author: Juan Sebastian Bautista Diaz
 Author URI:
 */
 
+// función para el menú
+function pokedex_menu() {
+    // Ruta de la imagen
+    $icon_path = 'C:\xampp\htdocs\wordpress\wp-content\plugins\pokedex-plugin\imagenes\pokeballred.png';
+
+    // Agrega el menú con la imagen como icono
+    add_menu_page(
+        'Pokedex Plugin',
+        'Pokedex',
+        'manage_options',
+        'pokedex-plugin',
+        'pokedex_admin_page',
+        $icon_path, // Ruta de la imagen
+        99
+    );
+}
+add_action('admin_menu', 'pokedex_menu');
+
+add_action('admin_menu', 'pokedex_menu');
+
+
 // Agregar shortcode
 function pokedex_shortcode($atts) {
-    // Lee y devuelve el contenido HTML
+    // Lee y devuelve el tem contenido HTML
     ob_start();
-    include(plugin_dir_path(__FILE__) . 'index.html');
+    include(plugin_dir_path(__FILE__) . 'templates/pokedex-template.php');
     return ob_get_clean();
 }
 add_shortcode('pokedex', 'pokedex_shortcode');
