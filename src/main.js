@@ -45,6 +45,7 @@ function fetchPokemonDescription(url) {
         return 'Error fetching description.';
       });
   }
+
 // Crea la tarjeta de un Pokémon y la muestra en el contenedor
 function createPokemonCard(pokemon) {
     // Crea elementos para la tarjeta del Pokémon
@@ -132,6 +133,33 @@ function createPokemonCard(pokemon) {
     });
 
     pokemonContainer.appendChild(card);
+}
+
+//Creamos constante para el buscador 
+const searchButton = document.getElementById("buscador-button");
+searchButton.addEventListener("click", () => {
+    const searchTerm = document.getElementById("buscador-input").value;
+    searchPokemon(searchTerm);
+});
+
+//Función de búsqueda 
+function searchPokemon(term) {
+    // Realiza una solicitud a la API para buscar el Pokémon por nombre o número
+    fetch(`https://pokeapi.co/api/v2/pokemon/${term.toLowerCase()}/`)
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error("No se encontró el Pokémon.");
+            }
+            return response.json();
+        })
+        .then((data) => {
+            // Muestra la tarjeta del Pokémon encontrado
+            showPokemonAlert(data);
+        })
+        .catch((error) => {
+            console.error("Error de búsqueda de Pokémon:", error);
+            alert("No se encontró el Pokémon. Inténtalo de nuevo.");
+        });
 }
 
 // Capitaliza la primera letra de una cadena
